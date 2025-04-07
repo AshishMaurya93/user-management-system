@@ -40,20 +40,7 @@ A responsive multi-page website for user and employee management with OTP verifi
 
 ## Project Structure
 
-\`\`\`
-user-management-system/
-├── index.html                  # User Management Dashboard
-├── register-user.html          # User Registration Form
-├── employee-management.html    # Employee Management Dashboard
-├── register-employee.html      # Employee Registration Form
-├── css/
-│   └── styles.css              # Main stylesheet
-├── js/
-│   ├── script.js               # Common JavaScript
-│   ├── register.js             # User Registration JavaScript
-│   └── register-employee.js    # Employee Registration JavaScript
-└── README.md                   # Project documentation
-\`\`\`
+user-management-system/ ├── index.html # User Management Dashboard ├── register-user.html # User Registration Form ├── employee-management.html # Employee Management Dashboard ├── register-employee.html # Employee Registration Form ├── css/ │ └── styles.css # Main stylesheet ├── js/ │ ├── script.js # Common JavaScript │ ├── register.js # User Registration JavaScript │ └── register-employee.js # Employee Registration JavaScript └── README.md
 
 ## How to Use
 
