@@ -110,7 +110,6 @@ Robust password validation has been implemented with the following features:
 The project uses JavaScript to simulate API calls for OTP generation and verification:
 
 ```plaintext
-javascript
 // Send OTP
 function mockSendOTP(contact, type) {
   return new Promise((resolve, reject) => {
