@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Management System</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2>Admin Dashboard</h2>
+        <button class="toggle-btn">
+          <i class="fas fa-plus"></i>
+        </button>
+      </div>
+      <nav class="sidebar-nav">
+        <ul>
+          <li><a href="#"><i class="fas fa-th-large"></i> Dashboard</a></li>
+          <li class="active"><a href="index.html"><i class="fas fa-users"></i> Manage Users</a></li>
+          <li><a href="#"><i class="fas fa-chart-bar"></i> Reports</a></li>
+          <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="admin-info">
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder-ob7miW3mUreePYfXdVwkpFWHthzoR5.svg?height=40&width=40" alt="Admin" class="admin-avatar">
+          <div>
+            <p class="admin-name">Admin User</p>
+            <p class="admin-email">admin@userplatform.com</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="content-header">
+        <h1>User Management</h1>
+        <button class="add-btn" id="addUserBtn">Add User</button>
+      </div>
+
+      <div class="search-container">
+        <h3>Search users</h3>
+        <div class="search-box">
+          <input type="text" placeholder="Search by name, email or ID">
+          <button class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <div class="section-header">
+          <div class="section-title">
+            <div class="yellow-bar"></div>
+            <h2>User List</h2>
+          </div>
+        </div>
+
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th><i class="fas fa-sort"></i> ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Garments Type</th>
+                <th>Phone Number</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="user-id">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder-ob7miW3mUreePYfXdVwkpFWHthzoR5.svg?height=40&width=40" alt="User" class="user-avatar">
+                    <span>USR001</span>
+                  </div>
+                </td>
+                <td>John Smith</td>
+                <td>john.smith@example.com</td>
+                <td>Men Garments</td>
+                <td>+91 9876543210</td>
+                <td class="actions">
+                  <button class="edit-btn"><i class="fas fa-edit"></i></button>
+                  <button class="delete-btn"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="user-id">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder-ob7miW3mUreePYfXdVwkpFWHthzoR5.svg?height=40&width=40" alt="User" class="user-avatar">
+                    <span>USR002</span>
+                  </div>
+                </td>
+                <td>Sarah Johnson</td>
+                <td>sarah.j@example.com</td>
+                <td>Women Garments</td>
+                <td>+91 8765432109</td>
+                <td class="actions">
+                  <button class="edit-btn"><i class="fas fa-edit"></i></button>
+                  <button class="delete-btn"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="user-id">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder-ob7miW3mUreePYfXdVwkpFWHthzoR5.svg?height=40&width=40" alt="User" class="user-avatar">
+                    <span>USR003</span>
+                  </div>
+                </td>
+                <td>Michael Brown</td>
+                <td>m.brown@example.com</td>
+                <td>Both</td>
+                <td>+91 7654321098</td>
+                <td class="actions">
+                  <button class="edit-btn"><i class="fas fa-edit"></i></button>
+                  <button class="delete-btn"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="user-id">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder-ob7miW3mUreePYfXdVwkpFWHthzoR5.svg?height=40&width=40" alt="User" class="user-avatar">
+                    <span>USR004</span>
+                  </div>
+                </td>
+                <td>Emily Davis</td>
+                <td>emily.d@example.com</td>
+                <td>Women Garments</td>
+                <td>+91 6543210987</td>
+                <td class="actions">
+                  <button class="edit-btn"><i class="fas fa-edit"></i></button>
+                  <button class="delete-btn"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="user-id">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder-ob7miW3mUreePYfXdVwkpFWHthzoR5.svg?height=40&width=40" alt="User" class="user-avatar">
+                    <span>USR005</span>
+                  </div>
+                </td>
+                <td>Robert Wilson</td>
+                <td>r.wilson@example.com</td>
+                <td>Men Garments</td>
+                <td>+91 5432109876</td>
+                <td class="actions">
+                  <button class="edit-btn"><i class="fas fa-edit"></i></button>
+                  <button class="delete-btn"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pagination">
+          <p>Showing 1-5 of 24 users</p>
+          <div class="pagination-buttons">
+            <button class="prev-btn">Previous</button>
+            <button class="next-btn">Next</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
+

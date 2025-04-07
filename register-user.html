@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Your Shop</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container registration-page">
+    <!-- Header -->
+    <header class="registration-header">
+      <div class="logo">StaffPortal</div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="#">Login</a>
+        <a href="#">About</a>
+      </nav>
+      <button class="signup-btn">Sign Up</button>
+    </header>
+
+    <!-- Registration Form -->
+    <main class="registration-content">
+      <div class="registration-form-container">
+        <h1>Register Your <span>Shop</span></h1>
+        <p class="form-subtitle">Complete the form below to create your shop account</p>
+
+        <form id="shopRegistrationForm" class="registration-form">
+          <!-- Personal Information -->
+          <div class="form-section">
+            <h2>Personal Information</h2>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" placeholder="Enter first name" required>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" placeholder="Enter last name" required>
+              </div>
+            </div>
+          </div>
+
+          <!-- Shop Information -->
+          <div class="form-section">
+            <h2>Shop Information</h2>
+            <div class="form-group">
+              <label for="shopName">Shop Name</label>
+              <input type="text" id="shopName" placeholder="Enter your shop name" required>
+            </div>
+            <div class="form-group">
+              <label for="shopAddress">Shop Address</label>
+              <textarea id="shopAddress" placeholder="Enter complete shop address" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="garmentsType">Garments Type</label>
+              <select id="garmentsType" required>
+                <option value="" disabled selected>Select one</option>
+                <option value="men">Men Garments</option>
+                <option value="women">Women Garments</option>
+                <option value="both">Both</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Contact & Security -->
+          <div class="form-section">
+            <h2>Contact & Security</h2>
+            <div class="form-group">
+              <label for="phoneNumber">Phone Number</label>
+              <div class="input-with-button">
+                <input type="tel" id="phoneNumber" placeholder="Enter phone number" required>
+                <button type="button" id="verifyPhoneBtn" class="verify-btn">Verify Phone</button>
+              </div>
+              <!-- Phone OTP container with improved structure -->
+              <div id="phoneOtpContainer" class="otp-container hidden">
+                <input type="text" id="phoneOtp" placeholder="Enter OTP" maxlength="6">
+                <p class="otp-timer">Expires in: <span id="phoneOtpTimer">02:00</span></p>
+                <div class="otp-actions">
+                  <button type="button" id="verifyPhoneOtpBtn" class="verify-otp-btn">Verify OTP</button>
+                  <button type="button" id="resendPhoneOtpBtn" class="resend-otp-btn" disabled>
+                    Resend OTP
+                    <span id="resendCountdown" class="resend-countdown"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <div class="input-with-button">
+                <input type="email" id="email" placeholder="Enter email address" required>
+                <button type="button" id="sendEmailOtpBtn" class="verify-btn">Send OTP</button>
+              </div>
+              <!-- Email OTP container with improved structure -->
+              <div id="emailOtpContainer" class="otp-container hidden">
+                <input type="text" id="emailOtp" placeholder="Enter OTP" maxlength="6">
+                <p class="otp-timer">Expires in: <span id="emailOtpTimer">02:00</span></p>
+                <div class="otp-actions">
+                  <button type="button" id="verifyEmailOtpBtn" class="verify-otp-btn">Verify OTP</button>
+                  <button type="button" id="resendEmailOtpBtn" class="resend-otp-btn" disabled>
+                    Resend OTP
+                    <span id="resendEmailCountdown" class="resend-countdown"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="password">Password</label>
+                <div class="password-input">
+                  <input type="password" id="password" placeholder="Create password" required>
+                  <button type="button" class="toggle-password"><i class="fas fa-eye"></i></button>
+                </div>
+                <div class="password-requirements">
+                  <div class="password-requirement" id="user-req-alphanumeric">
+                    <i class="fas fa-times-circle"></i>
+                    <span>Must be alphanumeric</span>
+                  </div>
+                  <div class="password-requirement" id="user-req-length">
+                    <i class="fas fa-times-circle"></i>
+                    <span>Must be 10-20 characters</span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <div class="password-input">
+                  <input type="password" id="confirmPassword" placeholder="Confirm password" required>
+                  <button type="button" class="toggle-password"><i class="fas fa-eye"></i></button>
+                </div>
+                <div class="password-requirement" id="user-req-match">
+                  <i class="fas fa-times-circle"></i>
+                  <span>Passwords must match</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" id="createShopAccountBtn" class="submit-btn">Create Shop Account</button>
+          <p class="terms-text">By registering, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></p>
+          <p class="login-link">Already have an account? <a href="#">Login</a></p>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/register.js"></script>
+</body>
+</html>
+
