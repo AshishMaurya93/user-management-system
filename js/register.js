@@ -50,9 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const password = passwordInput.value
     const confirmPassword = confirmPasswordInput.value
 
-    // Check if password is alphanumeric
-    const isAlphanumeric = /^[a-zA-Z0-9]+$/.test(password)
-    updateRequirement(reqAlphanumeric, isAlphanumeric)
+    // Check if password contains at least one letter, one number, and allows special characters
+    const hasValidChars = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d\W_]+$/.test(password)
+    updateRequirement(reqAlphanumeric, hasValidChars)
 
     // Check if password length is between 10 and 20
     const hasValidLength = password.length >= 10 && password.length <= 20
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const passwordsMatch = password === confirmPassword && password !== ""
     updateRequirement(reqMatch, passwordsMatch)
 
-    return isAlphanumeric && hasValidLength && passwordsMatch
+    return hasValidChars && hasValidLength && passwordsMatch
   }
 
   function updateRequirement(element, isMet) {
@@ -286,6 +286,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }, 1000)
 
+    // Store the interval ID
+    if (timerElement === phoneOtpTimer) {
+      phoneTimerInterval = interval
+    } else if (timerElement === emailOtpTimer) {
+      emailTimerInterval = interval
+    }
+
     // Return the interval ID so it can be cleared later
     return interval
   }
@@ -316,6 +323,13 @@ document.addEventListener("DOMContentLoaded", () => {
         resendButton.disabled = false
       }
     }, 1000)
+
+    // Store the interval ID
+    if (resendButton === resendPhoneOtpBtn) {
+      resendPhoneTimerInterval = interval
+    } else if (resendButton === resendEmailOtpBtn) {
+      resendEmailTimerInterval = interval
+    }
 
     // Return the interval ID so it can be cleared later
     return interval
@@ -361,4 +375,3 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 })
-

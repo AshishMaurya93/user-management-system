@@ -49,9 +49,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const password = passwordInput.value
     const confirmPassword = confirmPasswordInput.value
 
-    // Check if password is alphanumeric
-    const isAlphanumeric = /^[a-zA-Z0-9]+$/.test(password)
-    updateRequirement(reqAlphanumeric, isAlphanumeric)
+    // Check if password contains at least one letter, one number, and allows special characters
+    const hasValidChars = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d\W_]+$/.test(password)
+    updateRequirement(reqAlphanumeric, hasValidChars)
 
     // Check if password length is between 10 and 20
     const hasValidLength = password.length >= 10 && password.length <= 20
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const passwordsMatch = password === confirmPassword && password !== ""
     updateRequirement(reqMatch, passwordsMatch)
 
-    return isAlphanumeric && hasValidLength && passwordsMatch
+    return hasValidChars && hasValidLength && passwordsMatch
   }
 
   function updateRequirement(element, isMet) {
@@ -196,6 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Clear any existing timer
     if (phoneTimerInterval) {
       clearInterval(phoneTimerInterval)
+      phoneTimerInterval = null
     }
 
     let timeLeft = 120 // 2 minutes
@@ -211,6 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (timeLeft <= 0) {
         clearInterval(phoneTimerInterval)
+        phoneTimerInterval = null
         timerElement.textContent = "00:00"
         timerElement.parentElement.classList.add("otp-timer-expired")
       }
@@ -223,6 +225,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Clear any existing timer
     if (resendTimerInterval) {
       clearInterval(resendTimerInterval)
+      resendTimerInterval = null
     }
 
     // Initial delay of 10 seconds
@@ -241,6 +244,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (timeLeft <= 0) {
         clearInterval(resendTimerInterval)
+        resendTimerInterval = null
         countdownElement.textContent = ""
         resendButton.disabled = false
       }
@@ -481,4 +485,3 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 })
-

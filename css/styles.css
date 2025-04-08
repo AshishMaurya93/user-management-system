@@ -554,6 +554,7 @@ textarea {
   border: 1px solid var(--border-color);
   border-radius: 5px;
   background-color: #f9f9f9;
+  width: 100%;
 }
 
 .form-group textarea {
@@ -584,6 +585,7 @@ textarea {
   font-size: 0.9rem;
 }
 
+/* Password input */
 .password-input {
   position: relative;
 }
@@ -596,6 +598,18 @@ textarea {
   background: none;
   border: none;
   color: var(--text-light);
+  z-index: 1;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  width: 24px;
+}
+
+.password-input input {
+  padding-right: 40px; /* Make room for the eye icon */
 }
 
 /* Password validation */
@@ -768,4 +782,3 @@ textarea {
     align-items: flex-start;
   }
 }
-
